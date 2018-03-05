@@ -6,21 +6,23 @@ const logger = require('../util/logger')(__filename);
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: false,
+    scrollPage: true,
     emulateScreenMedia: true,
-    ignoreHttpsErrors: false,
-    html: null,
+    ignoreHttpsErrors: true,
+    html: true,
     viewport: {
       width: 1600,
       height: 1200,
     },
     goto: {
       waitUntil: 'networkidle0',
-      timeout: 120000,
+      timeout: 5000,
     },
     pdf: {
       format: 'A4',
       printBackground: true,
+      height: '8.5',
+      width: '11',
     },
   }, _opts);
 
