@@ -2267,9 +2267,9 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-"puppeteer@https://github.com/eriktrom/puppeteer.git#upgrade-ws-module":
+"puppeteer@https://github.com/repairshopr/puppeteer.git#upgrade-ws-module":
   version "1.1.1"
-  resolved "https://github.com/eriktrom/puppeteer.git#8a3af3c89f44c666477adcfdb742be1ecbe8a435"
+  resolved "https://github.com/repairshopr/puppeteer.git#8a3af3c89f44c666477adcfdb742be1ecbe8a435"
   dependencies:
     debug "^2.6.8"
     extract-zip "^1.6.5"
