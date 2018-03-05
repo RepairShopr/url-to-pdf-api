@@ -8,7 +8,7 @@ async function render(_opts = {}) {
     cookies: [],
     scrollPage: true,
     emulateScreenMedia: true,
-    ignoreHttpsErrors: false,
+    ignoreHttpsErrors: true,
     html: null,
     viewport: {
       width: 1600,
