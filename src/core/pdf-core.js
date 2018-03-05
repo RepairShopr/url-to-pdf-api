@@ -6,7 +6,7 @@ const logger = require('../util/logger')(__filename);
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: true,
+    scrollPage: false,
     emulateScreenMedia: true,
     ignoreHttpsErrors: false,
     html: null,
@@ -19,7 +19,7 @@ async function render(_opts = {}) {
       timeout: 120000,
     },
     pdf: {
-      format: 'A4',
+      format: 'letter',
       printBackground: true,
     },
   }, _opts);
