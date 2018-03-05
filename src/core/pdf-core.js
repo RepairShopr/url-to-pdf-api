@@ -9,7 +9,7 @@ async function render(_opts = {}) {
     scrollPage: true,
     emulateScreenMedia: true,
     ignoreHttpsErrors: true,
-    html: true,
+    html: false,
     viewport: {
       width: 1600,
       height: 1200,
