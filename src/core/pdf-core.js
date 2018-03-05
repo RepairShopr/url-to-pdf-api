@@ -8,21 +8,19 @@ async function render(_opts = {}) {
     cookies: [],
     scrollPage: true,
     emulateScreenMedia: true,
-    ignoreHttpsErrors: true,
-    html: false,
+    ignoreHttpsErrors: false,
+    html: null,
     viewport: {
       width: 1600,
       height: 1200,
     },
     goto: {
       waitUntil: 'networkidle0',
-      timeout: 5000,
+      timeout: 120000,
     },
     pdf: {
       format: 'A4',
       printBackground: true,
-      height: '8.5',
-      width: '11',
     },
   }, _opts);
 
