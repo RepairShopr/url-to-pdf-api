@@ -142,6 +142,10 @@ function logOpts(opts) {
     supressedOpts.html = '...';
   }
 
+  if (opts.url && opts.url.length > 1024) {
+    supressedOpts.url = opts.url.slice(0, 300);
+  }
+
   logger.info(`Rendering with opts: ${JSON.stringify(supressedOpts, null, 2)}`);
 }
 
