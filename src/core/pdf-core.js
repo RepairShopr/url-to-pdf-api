@@ -6,7 +6,7 @@ const logger = require('../util/logger')(__filename);
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: false,
+    scrollPage: true,
     emulateScreenMedia: true,
     ignoreHttpsErrors: false,
     html: null,
@@ -130,7 +130,7 @@ async function scrollPage(page) {
         setTimeout(scrollDown, scrollInterval);
       }
 
-      setTimeout(reject, 30000);
+      setTimeout(reject, 120000);
       scrollDown();
     });
   });
