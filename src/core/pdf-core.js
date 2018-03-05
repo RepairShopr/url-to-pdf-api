@@ -6,7 +6,7 @@ const logger = require('../util/logger')(__filename);
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: false,
+    scrollPage: true,
     emulateScreenMedia: true,
     ignoreHttpsErrors: false,
     html: null,
@@ -15,10 +15,11 @@ async function render(_opts = {}) {
       height: 1200,
     },
     goto: {
-      waitUntil: 'networkidle2',
+      waitUntil: 'networkidle0',
+      timeout: 120000,
     },
     pdf: {
-      format: 'A4',
+      format: 'letter',
       printBackground: true,
     },
   }, _opts);
@@ -129,7 +130,7 @@ async function scrollPage(page) {
         setTimeout(scrollDown, scrollInterval);
       }
 
-      setTimeout(reject, 30000);
+      setTimeout(reject, 120000);
       scrollDown();
     });
   });
@@ -139,6 +140,10 @@ function logOpts(opts) {
   const supressedOpts = _.cloneDeep(opts);
   if (opts.html) {
     supressedOpts.html = '...';
+  }
+
+  if (opts.url && opts.url.length > 1024) {
+    supressedOpts.url = opts.url.slice(0, 300);
   }
 
   logger.info(`Rendering with opts: ${JSON.stringify(supressedOpts, null, 2)}`);
