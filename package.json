@@ -4,7 +4,7 @@
   "description": "Web page PDF rendering done right. Packaged to an easy API.",
   "main": "src/index.js",
   "engines": {
-    "node": "8.x.x"
+    "node": "10.x.x"
   },
   "scripts": {
     "start": "nodemon --watch ./src -e js src/index.js",
@@ -30,11 +30,11 @@
     "express-validation": "^1.0.2",
     "joi": "^11.1.1",
     "lodash": "^4.17.4",
-    "morgan": "^1.9.0",
-    "puppeteer": "https://github.com/repairshopr/puppeteer.git#upgrade-ws-module",
+    "morgan": "^1.9.1",
+    "pdf-parse": "^1.1.1",
+    "puppeteer": "^1.14.0",
     "server-destroy": "^1.0.1",
-    "winston": "^2.3.1",
-    "ws": "^4.1.0"
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
