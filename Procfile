@@ -1,1 +1,1 @@
-web: NODE_ENV=production node src/index.js
+web: NODE_ENV=production ALLOW_HTTP=0 node src/index.js
