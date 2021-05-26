@@ -41,9 +41,9 @@ async function getFullPageHeight(page) {
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: false,
+    scrollPage: true,
     emulateScreenMedia: true,
-    ignoreHttpsErrors: false,
+    ignoreHttpsErrors: true,
     html: null,
     viewport: {
       width: 1600,
@@ -51,10 +51,11 @@ async function render(_opts = {}) {
     },
     goto: {
       waitUntil: 'networkidle0',
+      timout: 120000
     },
     output: 'pdf',
     pdf: {
-      format: 'A4',
+      format: 'letter',
       printBackground: true,
     },
     screenshot: {
