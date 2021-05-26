@@ -41,9 +41,9 @@ async function getFullPageHeight(page) {
 async function render(_opts = {}) {
   const opts = _.merge({
     cookies: [],
-    scrollPage: false,
+    scrollPage: true,
     emulateScreenMedia: true,
-    ignoreHttpsErrors: false,
+    ignoreHttpsErrors: true,
     html: null,
     viewport: {
       width: 1600,
@@ -51,10 +51,11 @@ async function render(_opts = {}) {
     },
     goto: {
       waitUntil: 'networkidle0',
+      timout: 120000
     },
     output: 'pdf',
     pdf: {
-      format: 'A4',
+      format: 'letter',
       printBackground: true,
     },
     screenshot: {
@@ -230,7 +231,7 @@ async function scrollPage(page) {
         setTimeout(scrollDown, scrollInterval);
       }
 
-      setTimeout(reject, 30000);
+      setTimeout(reject, 120000);
       scrollDown();
     });
   });
@@ -240,6 +241,10 @@ function logOpts(opts) {
   const supressedOpts = _.cloneDeep(opts);
   if (opts.html) {
     supressedOpts.html = '...';
+  }
+
+  if (opts.url && opts.url.length > 1024) {
+    supressedOpts.url = opts.url.slice(0, 300);
   }
 
   logger.info(`Rendering with opts: ${JSON.stringify(supressedOpts, null, 2)}`);
